@@ -1,12 +1,13 @@
 # PricingApp
 
-ASP.NET Core app for a product pricing table. You enter cost and target margin; a Python script calculates sell price and stores the row in SQL Server.
+ASP.NET Core API plus a React frontend for a product pricing table. You enter cost and target margin; a Python script calculates sell price and stores the row in SQL Server.
 
 **Formula:** `price = cost / (1 - margin / 100)`
 
 ## Requirements
 
 - [.NET 10 SDK](https://dotnet.microsoft.com/download)
+- [Node.js](https://nodejs.org/) (for the React frontend)
 - [Python 3](https://www.python.org/downloads/) on `PATH` (`python` must work in a terminal)
 - SQL Server on `localhost:1433` (this project uses a Docker container named `pricing-sqlserver`)
 
@@ -28,13 +29,27 @@ The app creates `PricingDB` and the `PricingItems` table automatically on startu
 
 ## Run the app
 
-From this folder:
+Start SQL Server, then run **both** the API and the React UI.
+
+**1. API** (from this folder):
 
 ```bat
 dotnet run
 ```
 
-Open [http://localhost:5015](http://localhost:5015).
+API: [http://localhost:5015](http://localhost:5015)
+
+**2. React frontend** (second terminal):
+
+```bat
+cd client
+npm install
+npm run dev
+```
+
+Open the UI at [http://localhost:5173](http://localhost:5173).
+
+The React app calls `/pricingitems` and Vite proxies those requests to the .NET API.
 
 ## What you can do
 
@@ -104,11 +119,10 @@ Example create body:
 ## Project layout
 
 ```
-Controllers/          Pricing page and JSON API
+client/               React (Vite) pricing table UI
+Controllers/          JSON API
 Data/                 EF Core DbContext
 Models/               PricingItem and request models
 PythonPricing/        pricing.py sell-price calculator
 Serivces/             Calls Python from .NET
-Views/Pricing/        Pricing table UI
-wwwroot/              CSS and JavaScript
 ```
