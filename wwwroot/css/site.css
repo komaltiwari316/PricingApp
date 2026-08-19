@@ -1,0 +1,279 @@
+:root {
+  --ink: #12263a;
+  --muted: #5b6b7c;
+  --line: #dce4ee;
+  --paper: #f4f7fb;
+  --card: #ffffff;
+  --accent: #0f6e56;
+  --accent-dark: #0b5744;
+  --danger: #b42318;
+}
+
+html {
+  font-size: 16px;
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  margin: 0;
+  color: var(--ink);
+  background: var(--paper);
+  font-family: "Segoe UI", sans-serif;
+}
+
+a {
+  color: var(--accent);
+}
+
+.navbar-pricing {
+  background: #fff;
+  border-bottom: 1px solid var(--line);
+}
+
+.navbar-brand {
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+.footer {
+  margin-top: 3rem;
+  padding: 1.5rem 0;
+  color: var(--muted);
+  border-top: 1px solid var(--line);
+}
+
+.pricing-page {
+  padding: 1.5rem 0 3rem;
+}
+
+.page-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.eyebrow {
+  margin: 0 0 0.35rem;
+  color: var(--accent);
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.page-header h1,
+.home-page h1 {
+  margin: 0;
+  font-size: 2rem;
+  letter-spacing: -0.03em;
+}
+
+.subtitle {
+  margin: 0.4rem 0 0;
+  color: var(--muted);
+}
+
+.btn-primary,
+.btn-add {
+  background: var(--accent);
+  border-color: var(--accent);
+}
+
+.btn-primary:hover,
+.btn-add:hover {
+  background: var(--accent-dark);
+  border-color: var(--accent-dark);
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+  margin-bottom: 1.25rem;
+}
+
+.stat-card,
+.panel {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(18, 38, 58, 0.04);
+}
+
+.stat-card {
+  padding: 1rem 1.15rem;
+}
+
+.stat-label {
+  display: block;
+  margin-bottom: 0.35rem;
+  color: var(--muted);
+  font-size: 0.85rem;
+}
+
+.stat-card strong {
+  font-size: 1.45rem;
+}
+
+.panel {
+  padding: 1.15rem;
+}
+
+.filters {
+  display: grid;
+  grid-template-columns: 1.6fr 1fr 0.8fr 0.8fr auto;
+  gap: 0.85rem;
+  align-items: end;
+  margin-bottom: 1rem;
+}
+
+.field label {
+  display: block;
+  margin-bottom: 0.35rem;
+  color: var(--muted);
+  font-size: 0.82rem;
+}
+
+.filter-actions {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.alert-host {
+  margin-bottom: 1rem;
+}
+
+.table-wrap {
+  overflow-x: auto;
+}
+
+.pricing-table {
+  margin: 0;
+}
+
+.pricing-table th {
+  color: var(--muted);
+  font-size: 0.78rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  border-bottom-width: 1px;
+}
+
+.pricing-table td,
+.pricing-table th {
+  vertical-align: middle;
+  white-space: nowrap;
+}
+
+.num {
+  text-align: right;
+}
+
+.price {
+  font-weight: 700;
+}
+
+.product-name {
+  font-weight: 600;
+}
+
+.chip,
+.status {
+  display: inline-flex;
+  align-items: center;
+  border-radius: 999px;
+  padding: 0.2rem 0.65rem;
+  font-size: 0.78rem;
+}
+
+.chip {
+  background: #eef4f1;
+  color: #245042;
+}
+
+.status.active {
+  background: #e6f6ee;
+  color: #067647;
+}
+
+.status.inactive {
+  background: #f2f4f7;
+  color: #475467;
+}
+
+.actions {
+  text-align: right;
+}
+
+.link-btn {
+  background: none;
+  border: 0;
+  padding: 0;
+  color: var(--accent);
+  font-weight: 600;
+}
+
+.link-btn + .link-btn {
+  margin-left: 0.85rem;
+}
+
+.link-btn.danger {
+  color: var(--danger);
+}
+
+.empty-row td {
+  padding: 2.5rem 1rem;
+  text-align: center;
+  color: var(--muted);
+}
+
+.preview-box {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.9rem 1rem;
+  background: #f3faf6;
+  border: 1px solid #cde7d8;
+  border-radius: 12px;
+}
+
+.preview-box span {
+  color: var(--muted);
+}
+
+.preview-box strong {
+  font-size: 1.25rem;
+  color: var(--accent-dark);
+}
+
+.form-error {
+  margin: 0.85rem 0 0;
+  color: var(--danger);
+}
+
+.modal-title {
+  font-size: 1.2rem;
+}
+
+@media (max-width: 992px) {
+  .stats-grid,
+  .filters {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .page-header,
+  .stats-grid,
+  .filters {
+    grid-template-columns: 1fr;
+  }
+
+  .page-header {
+    align-items: stretch;
+  }
+}
