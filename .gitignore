@@ -5,3 +5,5 @@ obj/
 appsettings.Development.json
 client/node_modules/
 client/dist/
+appsettings.json
+appsettings.*.json
