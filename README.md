@@ -22,7 +22,7 @@ docker start pricing-sqlserver
 To create it for the first time:
 
 ```bat
-docker run -e "ACCEPT_EULA=Y" -e "MSSQL_SA_PASSWORD=SqlServer@12345" -p 1433:1433 --name pricing-sqlserver -d mcr.microsoft.com/mssql/server:2022-latest
+docker run -e "ACCEPT_EULA=Y" -e "MSSQL_SA_PASSWORD=<YOUR_SQL_SERVER_PASSWORD>" -p 1433:1433 --name pricing-sqlserver -d mcr.microsoft.com/mssql/server:2022-latest
 ```
 
 The app creates `PricingDB` and the `PricingItems` table automatically on startup.
