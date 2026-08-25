@@ -91,7 +91,7 @@ You can also connect with SQL Server Management Studio or Azure Data Studio:
 
 - Server: `localhost,1433`
 - Login: `sa`
-- Password: `SqlServer@12345`
+- Password: `<YOUR_SQL_SERVER_PASSWORD>`
 - Database: `PricingDB`
 - Table: `PricingItems`
 
